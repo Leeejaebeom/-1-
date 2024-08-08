@@ -1,0 +1,435 @@
+
+html, body {
+width: 100%;
+height: 100%;
+}
+
+.close{
+	    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    border: 0;
+    padding: 22px;
+    z-index: 10;
+}
+
+	/* Icon */
+	.bar {position: relative;}
+
+		.bar:before, 
+		.bar:after {
+		content: "";
+		position: absolute;
+		}
+
+		.bar:before, 
+		.bar:after, 
+		.bar {
+		width: 24px;
+		height: 3px;
+		background: black;
+		margin: 3px 0;
+		display: block;
+		}
+
+		.bar:before { bottom: 100%; } 
+		.bar:after { top: 100%; } 
+		.bar.active:after { top: 0; } 
+		.bar.active:before { bottom: -200%; } 
+		.bar.active { background-color: transparent; } 
+		.bar, .bar:before, .bar:after { -webkit-transition: all .25s linear !important; transition: all .25s linear !important; } 
+		.bar.active:before,  .bar.active:after { -webkit-transition-delay: .15s !important; transition-delay: .15s !important; } 
+		.bar.active:before { -webkit-transform: rotate(45deg); transform: rotate(45deg); } 
+		.bar.active:after { -webkit-transform: rotate(-45deg); transform: rotate(-45deg); } 
+
+.outside {
+width: 25%;
+min-width: 200px;
+max-width: 250px;
+height: 100%;
+-webkit-transform: translateX(-101%);
+        transform: translateX(-101%);
+-webkit-transition: all .5s cubic-bezier(0,0.05,0,1.3);
+transition: all .5s cubic-bezier(0,0.05,0,1.3);
+overflow: hidden;
+}
+
+	.in {
+	-webkit-transform: translateX(0);
+	        transform: translateX(0);
+	-webkit-transition: 0;
+	transition: 0;
+	}
+
+	.inside {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: whitesmoke;
+	border-right: 1px solid rgba(255,255,255,0.2);
+	border-radius: 0 100% 100% 0;
+	-webkit-transition: all .25s cubic-bezier(1,0.05,1,1.5);
+	transition: all .25s cubic-bezier(1,0.05,1,1.5);
+	-webkit-transition-delay: .5s;
+	        transition-delay: .5s;
+
+	}
+
+	.in .inside {
+	border-radius: 0;
+	-webkit-transition-delay: 0s;
+	        transition-delay: 0s;
+
+	}
+
+/* material animation */
+	.inside:before {
+	content: "";
+	width: 2100px;
+	height: 2100px;
+	display: block;
+	background-color: white;
+	position: absolute;
+		top: -50%;
+		left: -100%;
+		z-index: -1;
+	-webkit-transition: all .75s linear;
+	transition: all .75s linear;
+	-webkit-transition-delay: .15s;
+	        transition-delay: .15s;
+	-webkit-transform: scale(0);
+	        transform: scale(0);
+	-webkit-transform-origin: top right;
+	        transform-origin: top right;
+	border-radius: 1000px;}
+
+		.outside.in .inside:before {
+		-webkit-transform: scale(1);
+		        transform: scale(1);
+
+		}
+
+/* Menu */
+ul.menu {
+list-style: none;
+margin: 0;
+padding: 0;
+line-height: 2;
+}
+
+.menu li {
+background: whitesmoke;
+opacity: 0;
+padding: 12px 22px;
+border-bottom: 1px solid rgba(255,255,255,.5);
+color: gray;
+-webkit-transition: all .25s linear;
+transition: all .25s linear;
+}
+
+.in .menu li {
+-webkit-transform: translateX(0%);
+        transform: translateX(0%);
+opacity: 1;
+}
+
+.in .menu li:nth-child(1) { -webkit-transition-delay: 1s; transition-delay: 1s; } 
+.in .menu li:nth-child(2) { -webkit-transition-delay: 1.15s; transition-delay: 1.15s; } 
+.in .menu li:nth-child(3) { -webkit-transition-delay: 1.25s; transition-delay: 1.25s; } 
+.in .menu li:nth-child(4) { -webkit-transition-delay: 1.35s; transition-delay: 1.35s; } 
+.in .menu li:nth-child(5) { -webkit-transition-delay: 1.45s; transition-delay: 1.45s; } 
+.in .menu li:nth-child(6) { -webkit-transition-delay: 1.55s; transition-delay: 1.55s; } 
+.in .menu li:nth-child(7) { -webkit-transition-delay: 1.65s; transition-delay: 1.65s; } 
+
+/* Animation */
+
+.in .inside {
+  -webkit-animation: bounce 1s both;
+}
+
+
+/* Generated with Bounce.js. Edit at https://goo.gl/zdjCb0 */
+
+@-webkit-keyframes bounce { 
+ 0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  27.68% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  27.78% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 0, 0, 1); }
+  29.73% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -49.785, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -49.785, 0, 0, 1); }
+  31.61% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.659, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.659, 0, 0, 1); }
+  33.06% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -23.527, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -23.527, 0, 0, 1); }
+  34.43% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -30.089, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -30.089, 0, 0, 1); }
+  36.81% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -18.067, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -18.067, 0, 0, 1); }
+  39.2% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.115, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.115, 0, 0, 1); }
+  42.09% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -8.347, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -8.347, 0, 0, 1); }
+  46.79% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.013, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.013, 0, 0, 1); }
+  49.68% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -2.316, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -2.316, 0, 0, 1); }
+  54.38% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.002, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.002, 0, 0, 1); }
+  57.27% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.643, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.643, 0, 0, 1); }
+  62.05% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.007, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.007, 0, 0, 1); }
+  64.86% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.178, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.178, 0, 0, 1); }
+  69.64% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.002, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.002, 0, 0, 1); }
+  72.53% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.049, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.049, 0, 0, 1); }
+  77.23% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  80.12% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.014, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.014, 0, 0, 1); }
+  84.82% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  87.71% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.004, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.004, 0, 0, 1); }
+  92.48% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  95.3% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.001, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -0.001, 0, 0, 1); }
+  100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+}
+
+/*아래로는 모달에 해당되는 스타일입니다.*/
+  @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    .modalBody {
+      box-sizing: border-box;
+      font-family: "Nanum Gothic" !important;
+      z-index: 5;
+    }
+
+    .modal {
+      /* 스타일 - customize */
+      background-color: rgba(190, 185, 185, 0.646);
+      pointer-events: none;
+      padding: 20px;
+
+      /* 트랜지션 효과 */
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+
+      /* 화면 전체를 덮게하는 코드 */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      /* 중앙에 오게하는 코드 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      /* 스타일 - customize */
+      max-width: 400px;
+      width: 100%;
+      height: 650px;
+      background-color: #ebecf0;
+      padding: 20px;
+      border-radius: 10px;
+     box-shadow: -5px -5px 10px #fff, 5px 5px 10px #babebc;
+
+      /* 트랜지션 효과 */
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+      transform: scale(0.8);
+    }
+
+    .modal.show {
+      /* 모달이 열렸을 때 보여지게 하는 코드 */
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal.show .modal-content {
+      /* 모달이 열렸을 때 보여지게 하는 코드 */
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
+    }
+
+    .logo {
+      background-image: url('../Modyo/imgs/MoyeoLogo.png');
+      height: 60px;
+      width: 100%;
+    }
+    .form-control{
+	background: #eee;
+    padding: 15px;
+    width: 70%;
+    border: 0;
+    outline: none;
+    border-radius: 20px;
+    font-size: 15px;
+    box-shadow: inset 7px 2px 10px #babebc, inset -5px -5px 12px #fff;
+    
+    }
+
+    .form-group{
+    padding-left: 15%;
+    margin-top: 20px;}
+    .label{
+    font-size: 20px;}
+    .logBtn{
+	border-radius: 20px;
+    width: 170px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 15px 45px;
+    margin: auto;
+    margin-left: 15%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 80ms ease-in;
+    box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
+    background: rgba(80, 150, 255, 0.84);
+    color: white;
+    font-size: 15px;
+    margin-top: 5%;
+    }
+    .logBtn:active {
+  box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff;
+}
+    a{
+    text-decoration: none;
+    }
+    .logo{
+	width: 50%;
+    margin: 22%;
+    height: 135px;
+    background-image: url(/resources/imgs/MoyeoLogo.png);
+    background-size: cover;
+    margin-bottom: 60px;
+    margin-top: 10%;
+    }
+    .mt-4{
+    width: 70%;
+    margin-left: 15%;
+    height: 100px;
+    background-color: red;
+    }
+    
+    .social-links div {
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
+    cursor: pointer;
+    margin-left: 10%;
+    margin-top: 8%;	
+    margin-bottom: 5%;
+    margin-right: 4%;
+}
+}
+.social-links a {
+  color: #000;
+  height: 60px;
+}
+.social-links div:active {
+  box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff;
+}
+.float-right{
+padding-left: 15px;}
+.custom-control-input:before {
+	color: black;
+}
+.errMsg{
+	font-size: 10px;
+	padding-left: 100px;
+	color: red;
+	}
+	.custom-control-label{
+	font-size: 12px;}
+a:link {
+  color : black;
+}
+a:visited {
+  color : black;
+}
+a:hover {
+  color : red;
+}
+a:active {
+  color : green;
+}
+.checkbox{
+ display: flex;
+  align-items: center;
+}
+
+.btn{
+width: 60px;
+height: 60px;
+}
+.checkbox input{
+  display: none;
+}
+
+.checkbox span{
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 45px;
+}
+
+.checkbox .icon{
+  position: relative;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #c8ccd4;
+  border-radius: 50px;
+  transition:.1s ease;
+}
+
+.checkbox .icon::after{
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  width: 5px;
+  height: 11px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg) scale(0); 
+  transition: all 03s ease;
+  transition-delay: .15s;
+  opacity: 0;
+}
+
+.checkbox input:checked~ .icon {
+  border-color: transparent;
+  background-color: rgba(79, 105, 255, 0.84);
+  animation: jelly .6s ease;
+}
+
+.checkbox input:checked~ .icon::after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+
+@keyframes jelly {
+  from {transform: scale(1,1);}
+  30%  {transform: scale(1.25, 0.75);}
+  40%  {transform: scale(0.75, 1.25);}
+  50%  {transform: scale(1.15, 0.85);}
+  65%  {transform: scale(0.95, 1.05);}
+  75%  {transform: scale(1.05, 0.95);}
+  to   {transform: scale(1,1);}
+}
+
+  </style>
+	<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/my-login.css' />">
+	<link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
