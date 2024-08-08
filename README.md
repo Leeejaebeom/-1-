@@ -51,7 +51,7 @@
 5. MySQL
  - 데이터베이스 관리 시스템: 사용자 정보, 여행 계획, 리뷰 등 애플리케이션 데이터를     효율적으로 저장하고 관리.
 
-        <div>
+        
     </div>
     <div style="text-align: left;">
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2> <br> 
