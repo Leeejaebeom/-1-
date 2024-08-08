@@ -10,12 +10,24 @@
 
 ## 목적과 목표
 
+
 **목적**: 
  1. 사용자가 쉽게 여행 계획을 세우고, 다른 사용자와 이를 공유하여 여행 동반자를 구할 수      있도록 지원.
  2. 각 지역의 테마별 추천 여행지를 제공하여 사용자가 다양한 여행지를 탐색하고 선     택할 수 있도록 도움.
  3. 여행자들이 서로의 여행 후기를 통해 신뢰성 있는 여행 정보를 얻고, 여행 계획을      보다 효율적으로 세울 수 있도록 지원.
 
 **목표**: 사용자가 자신의 여행지에 사진을 쉽게 등록하고, 지도에 표시할 수 있는 기능을 제공하는 웹 애플리케이션을 개발하는 것 </div> 
+
+## 기술 아키텍쳐
+| 카테고리      | 기술                                                                                                                                                 |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **프로그래밍 언어** | <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java" width="20"/> Java <br> <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" width="20"/> JavaScript |
+| **프레임워크** | <img src=https://upload.wikimedia.org/wikipedia/commons/7/79/Spring_Boot.svg width="20"/> Spring Boot (백엔드) <br> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png" width="20"/> visualstudio (프론트엔드) |
+| **데이터베이스** | <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL" width="20"/> MySQL                             |
+| **지도 API** | <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/KakaoMap_logo.png" width="20"> kakaoMap API                             |
+| **공공데이터**        | 공공 데이터 포털 전국관광지정보표준데이터  |
+| **파일 저장**   | 서버 내 스토리지  |
+| **빌드 도구**   |  Maven     
 
 주요 기능
 1. 여행 계획 작성 및 공유 기능
