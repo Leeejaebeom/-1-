@@ -16,7 +16,8 @@
  3. 여행자들이 서로의 여행 후기를 통해 신뢰성 있는 여행 정보를 얻고, 여행 계획을      보다 효율적으로 세울 수 있도록 지원.
 
 **목표**: 사용자가 자신의 여행지에 사진을 쉽게 등록하고, 지도에 표시할 수 있는 기능을 제공하는 웹 애플리케이션을 개발하는 것 </div> 
-        
+
+        <div>
     </div>
     <div style="text-align: left;">
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2> <br> 
